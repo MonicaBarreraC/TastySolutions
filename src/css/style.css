@@ -58,6 +58,26 @@ nav ul li a {
 main {
   margin: auto 1em;
 }
+.centered {
+  text-align: center;
+}
+.stars{
+  color: #ff9f1c;
+}
+.full-recipe{
+  max-width: 940px;
+  margin: auto;
+}
+.img-title{
+  display: flex;
+}
+.img-title img {
+  max-width: 300px;
+  padding-right: 1em;
+}
+.recipe__ingredients {
+  padding-inline-start: 1.5em;
+}
 footer {
   background-color: lightgrey;
   font-size: var(--small-font);
