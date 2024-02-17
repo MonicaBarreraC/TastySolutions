@@ -1,3 +1,5 @@
+import { doc } from "prettier";
+
 const url = "/json/db-recipes.json";
 
 async function convertToJson(res){
@@ -20,15 +22,40 @@ async function getData() {
     console.log(`name: ${recipe.name}`);
     //recipeTemplate(data.Result[])
 
-    const selector = "main";
-    const element = document.querySelector(selector);
+    const bestRecipe = ".best-rated";
+    const bRecipe = document.querySelector(bestRecipe);
+
+    const randomRecipe = ".random-recipes";
+    const rRecipe = document.querySelector(randomRecipe);
+
+    //const divRecipes = document.querySelector(selector);
+
+    // Full Recipe
+    /*
     element.insertAdjacentHTML(
         "beforeend",
         fullRecipeTemplate(recipe)
       );
+    */
+    
+    // Random Recipe
+    bRecipe.insertAdjacentHTML(
+        "beforeend",
+        bestRecipeTemplate(recipe)
+    );
+    insertRecipe(rRecipe, data.Result[1]);
+    insertRecipe(rRecipe, data.Result[2]);
+    insertRecipe(rRecipe, data.Result[3]);
 
     console.log(data.Result);
     //return data.Result;
+}
+
+function insertRecipe(element, recipe){
+    element.insertAdjacentHTML(
+        "beforeend",
+        randomRecipeTemplate(recipe)
+    );
 }
 
 function getRandomRecipe(max) {
@@ -73,6 +100,37 @@ function fullRecipeTemplate(recipe){
             ${recipe.instructions}
         </p>
         </section>`;
+}
+
+function randomRecipeTemplate(recipe){
+    return `
+        <div class="r-recipe">
+            <img
+            src="/images/placeholder.jpg"
+            alt="${recipe.name}"
+            />
+            <div>
+                <h1>${recipe.name}</h1>
+                <p><span class="stars">&#9733&#9733&#9733&#9733&#9734</span> (4.5)</p>
+            </div>
+        </div>
+        `;
+}
+
+function bestRecipeTemplate(recipe){
+    return `
+        <div class="img-title">
+            <img
+            src="/images/placeholder.jpg"
+            alt="${recipe.name}"
+            />
+            <div>
+                <p>Best Rated Recipe</p>
+                <h1>${recipe.name}</h1>
+                <p><span class="stars">&#9733&#9733&#9733&#9733&#9734</span> (4.5)</p>
+            </div>
+        </div>
+        `;
 }
 
 getData();

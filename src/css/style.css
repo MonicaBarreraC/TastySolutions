@@ -68,6 +68,34 @@ main {
   max-width: 940px;
   margin: auto;
 }
+.best-rated {
+  max-width: 900px;
+  margin: auto;
+}
+
+.random-recipes {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.r-recipe{
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  margin: 5px;
+  border: solid #CCC 1px;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+}
+.r-recipe h1{
+  font-size: var(--large-font);
+}
+.r-recipe img{
+  max-width: 200px;
+}
+
 .img-title{
   display: flex;
 }
