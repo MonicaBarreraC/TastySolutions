@@ -58,21 +58,21 @@ nav ul li a {
 main {
   margin: auto 1em;
 }
-main a{
+main a {
   text-decoration: none;
   color: black;
 }
-main a:hover{
+main a:hover {
   text-decoration: none;
   color: var(--secondary-color);
 }
 .centered {
   text-align: center;
 }
-.stars{
+.stars {
   color: #ff9f1c;
 }
-.full-recipe{
+.full-recipe {
   max-width: 940px;
   margin: auto;
 }
@@ -87,25 +87,25 @@ main a:hover{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
-.r-recipe{
+.r-recipe {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   padding: 1em;
   margin: 15px 20px;
-  border: solid #CCC 1px;
+  border: solid #ccc 1px;
   align-items: center;
   text-align: center;
   border-radius: 20px;
 }
-.r-recipe h1{
+.r-recipe h1 {
   font-size: var(--large-font);
 }
-.r-recipe img{
+.r-recipe img {
   max-width: 200px;
 }
 
-.img-title{
+.img-title {
   display: flex;
 }
 .img-title img {

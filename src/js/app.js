@@ -1,100 +1,91 @@
-import { doc } from "prettier";
-
 const url = "/json/db-recipes.json";
 
-async function convertToJson(res){
-    const data = await res.json();
-    if (res.ok){
-        return data;
-    } else {
-        throw {name: "servicesError", mesagge: data};
-    }
+async function convertToJson(res) {
+  const data = await res.json();
+  if (res.ok) {
+    return data;
+  } else {
+    throw { name: "servicesError", mesagge: data };
+  }
 }
 async function getData() {
-    const response = await fetch(url);
-    const data = await convertToJson(response);
+  const response = await fetch(url);
+  const data = await convertToJson(response);
 
-    // Get Random Recipe
-    const random = getRandomRecipe(data.Result.length);
-    console.log(random);
-    console.log(data.Result[random]);
-    const recipe = data.Result[random];
-    console.log(`name: ${recipe.name}`);
-    //recipeTemplate(data.Result[])
+  // Get Random Recipe
+  const random = getRandomRecipe(data.Result.length);
+  console.log(random);
+  console.log(data.Result[random]);
+  const recipe = data.Result[random];
+  console.log(`name: ${recipe.name}`);
+  //recipeTemplate(data.Result[])
 
-    const bestRecipe = ".best-rated";
-    const bRecipe = document.querySelector(bestRecipe);
+  const bestRecipe = ".best-rated";
+  const bRecipe = document.querySelector(bestRecipe);
 
-    const randomRecipe = ".random-recipes";
-    const rRecipe = document.querySelector(randomRecipe);
+  const randomRecipe = ".random-recipes";
+  const rRecipe = document.querySelector(randomRecipe);
 
-    //const divRecipes = document.querySelector(selector);
+  //const divRecipes = document.querySelector(selector);
 
-    // Full Recipe
-    /*
+  // Full Recipe
+  /*
     element.insertAdjacentHTML(
         "beforeend",
         fullRecipeTemplate(recipe)
       );
     */
 
-    let listRandom = [];
-    const n = 3;
-    for (let i = 0; i < n; i++) {
-        const number = getRandomRecipe(data.Result.length);
-        //console.log(number);
-        while (listRandom.includes(number)) {
-            number = getRandomRecipe(data.Result.length);
-            console.log(number);
-        }
-        listRandom.push(number);
-        //console.log(listRandom);
+  let listRandom = [];
+  const n = 3;
+  for (let i = 0; i < n; i++) {
+    let number = getRandomRecipe(data.Result.length);
+    //console.log(number);
+    while (listRandom.includes(number)) {
+      number = getRandomRecipe(data.Result.length);
+      console.log(number);
     }
-    
-    // Random Recipe
-    bRecipe.insertAdjacentHTML(
-        "beforeend",
-        bestRecipeTemplate(recipe)
-    );
-    listRandom.forEach(element => {
-        insertRecipe(rRecipe, data.Result[element]);
-    });
-    /*insertRecipe(rRecipe, data.Result[1]);
+    listRandom.push(number);
+    //console.log(listRandom);
+  }
+
+  // Random Recipe
+  bRecipe.insertAdjacentHTML("beforeend", bestRecipeTemplate(recipe));
+  listRandom.forEach((element) => {
+    insertRecipe(rRecipe, data.Result[element]);
+  });
+  /*insertRecipe(rRecipe, data.Result[1]);
     insertRecipe(rRecipe, data.Result[2]);
     insertRecipe(rRecipe, data.Result[3]);*/
 
-    console.log(data.Result);
-    //return data.Result;
+  console.log(data.Result);
+  //return data.Result;
 }
 
-function insertRecipe(element, recipe){
-    element.insertAdjacentHTML(
-        "beforeend",
-        randomRecipeTemplate(recipe)
-    );
+function insertRecipe(element, recipe) {
+  element.insertAdjacentHTML("beforeend", randomRecipeTemplate(recipe));
 }
 
 function getRandomRecipe(max) {
-    const random =  Math.floor(Math.random() * max);
-    //console.log(random);
-    return random;
+  const random = Math.floor(Math.random() * max);
+  //console.log(random);
+  return random;
 }
 
-function displayList(list){
-    let html = "";
-    list.forEach(element => {
-        if(element == "<hr>\r"){
-            html += element;
-        } else {
-            html += `<li>${element}</li>`;
-        }
-    });
-    return html;
+function displayList(list) {
+  let html = "";
+  list.forEach((element) => {
+    if (element == "<hr>\r") {
+      html += element;
+    } else {
+      html += `<li>${element}</li>`;
+    }
+  });
+  return html;
 }
 
-function fullRecipeTemplate(recipe){
-    
-    return `<section class="full-recipe">
+function fullRecipeTemplate(recipe) {
+  return `<section class="full-recipe">
         <div class="img-title">
             <img
             src="/images/placeholder.jpg"
@@ -118,8 +109,8 @@ function fullRecipeTemplate(recipe){
         </section>`;
 }
 
-function randomRecipeTemplate(recipe){
-    return `
+function randomRecipeTemplate(recipe) {
+  return `
         <div class="r-recipe">
             <img
             src="/images/placeholder.jpg"
@@ -133,8 +124,8 @@ function randomRecipeTemplate(recipe){
         `;
 }
 
-function bestRecipeTemplate(recipe){
-    return `
+function bestRecipeTemplate(recipe) {
+  return `
         <div class="img-title">
             <img
             src="/images/placeholder.jpg"
