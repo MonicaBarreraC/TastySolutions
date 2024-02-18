@@ -37,15 +37,31 @@ async function getData() {
         fullRecipeTemplate(recipe)
       );
     */
+
+    let listRandom = [];
+    const n = 3;
+    for (let i = 0; i < n; i++) {
+        const number = getRandomRecipe(data.Result.length);
+        //console.log(number);
+        while (listRandom.includes(number)) {
+            number = getRandomRecipe(data.Result.length);
+            console.log(number);
+        }
+        listRandom.push(number);
+        //console.log(listRandom);
+    }
     
     // Random Recipe
     bRecipe.insertAdjacentHTML(
         "beforeend",
         bestRecipeTemplate(recipe)
     );
-    insertRecipe(rRecipe, data.Result[1]);
+    listRandom.forEach(element => {
+        insertRecipe(rRecipe, data.Result[element]);
+    });
+    /*insertRecipe(rRecipe, data.Result[1]);
     insertRecipe(rRecipe, data.Result[2]);
-    insertRecipe(rRecipe, data.Result[3]);
+    insertRecipe(rRecipe, data.Result[3]);*/
 
     console.log(data.Result);
     //return data.Result;
@@ -110,7 +126,7 @@ function randomRecipeTemplate(recipe){
             alt="${recipe.name}"
             />
             <div>
-                <h1>${recipe.name}</h1>
+                <h1><a href="">${recipe.name}</a></h1>
                 <p><span class="stars">&#9733&#9733&#9733&#9733&#9734</span> (4.5)</p>
             </div>
         </div>
@@ -126,7 +142,7 @@ function bestRecipeTemplate(recipe){
             />
             <div>
                 <p>Best Rated Recipe</p>
-                <h1>${recipe.name}</h1>
+                <h1><a href="">${recipe.name}</a></h1>
                 <p><span class="stars">&#9733&#9733&#9733&#9733&#9734</span> (4.5)</p>
             </div>
         </div>
@@ -137,4 +153,7 @@ getData();
 
 /*⭐⭐⭐⭐⭐
 <p class="recipe__tags">${recipe.tags}</p>
-<section class="recipe-details">*/
+<section class="recipe-details">
+
+<h1><a href="/recipe_pages/index.html?recipe=ID">${recipe.name}</a></h1>
+*/

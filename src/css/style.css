@@ -58,6 +58,14 @@ nav ul li a {
 main {
   margin: auto 1em;
 }
+main a{
+  text-decoration: none;
+  color: black;
+}
+main a:hover{
+  text-decoration: none;
+  color: var(--secondary-color);
+}
 .centered {
   text-align: center;
 }
@@ -74,7 +82,7 @@ main {
 }
 
 .random-recipes {
-  max-width: 1000px;
+  max-width: 1080px;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -82,8 +90,9 @@ main {
 .r-recipe{
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   padding: 1em;
-  margin: 5px;
+  margin: 15px 20px;
   border: solid #CCC 1px;
   align-items: center;
   text-align: center;
