@@ -32,7 +32,7 @@ export default class RecipeHome {
         this.renderRecipeDiv(".best-rated", "img-title", text);
 
         /* Generate n Recipes */
-        const listRecipes = generateListNumbers(3, data.length);
+        const listRecipes = generateListNumbers(this.nRecipes, data.length);
         listRecipes.forEach((element) => {
             // Get recipe information
             this.recipe = data[element];

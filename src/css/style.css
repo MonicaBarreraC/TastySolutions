@@ -1,6 +1,6 @@
 :root {
   --font-body: Open Sans, sans-serif;
-  --font-headline: Playfair Display, sans-serif;
+  --font-headline: Playfair Display, serif;
   /* Colors */
   --primary-color: #ff9f1c;
   --secondary-color: #2ec4b6;
@@ -49,6 +49,7 @@ header {
 nav ul {
   display: flex;
   list-style-type: none;
+  align-items: flex-end;
 }
 nav ul li a {
   margin: 1em;
@@ -105,7 +106,12 @@ main a:hover {
 .r-recipe img {
   max-width: 200px;
 }
-
+li.fav-card {
+  display: flex;
+}
+.fav-card div {
+  padding: 1em;
+}
 .img-title {
   display: flex;
 }
@@ -124,6 +130,7 @@ button#addToFav {
 button#addToFav:hover {
   background: none;
   border: none;
+  cursor: pointer;
 }
 footer {
   background-color: lightgrey;
