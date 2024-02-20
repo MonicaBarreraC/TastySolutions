@@ -1,3 +1,5 @@
+import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+
 function fullRecipeTemplate(recipe) {
     return `<section class="full-recipe">
           <div class="img-title">
@@ -44,10 +46,25 @@ export default class RecipeDetails {
     async init() {
         this.recipe = await this.dataSource.findRecipeById(this.recipeId);
         this.renderRecipeDetails("main");
-        // add to fav
+        document.getElementById("addToFav").addEventListener("click", this.addToFav.bind(this));
     }
     renderRecipeDetails(selector){
         const element = document.querySelector(selector);
         element.insertAdjacentHTML("beforeend", fullRecipeTemplate(this.recipe));
+    }
+    addToFav() {
+        let favList = getLocalStorage("fav-recipes") || [];
+        let inList = false;
+        favList.forEach(element => {
+            if(this.recipe.id == element.id) {
+                inList = true;
+                console.log("It's already a favorite");
+            }
+        });
+        // Not in fav List
+        if (inList == false){
+            favList.push(this.recipe);
+        }
+        setLocalStorage("fav-recipes", favList);
     }
 }
