@@ -75,6 +75,7 @@ main a:hover {
 .full-recipe {
   max-width: 940px;
   margin: auto;
+  padding: 1em;
 }
 .best-rated {
   max-width: 900px;
@@ -114,6 +115,15 @@ main a:hover {
 }
 .recipe__ingredients {
   padding-inline-start: 1.5em;
+}
+button#addToFav{
+  background: none;
+  border: none;
+  font-size: var(--large-font);
+}
+button#addToFav:hover{
+  background: none;
+  border: none;
 }
 footer {
   background-color: lightgrey;
