@@ -116,12 +116,12 @@ main a:hover {
 .recipe__ingredients {
   padding-inline-start: 1.5em;
 }
-button#addToFav{
+button#addToFav {
   background: none;
   border: none;
   font-size: var(--large-font);
 }
-button#addToFav:hover{
+button#addToFav:hover {
   background: none;
   border: none;
 }
