@@ -11,6 +11,7 @@ export default defineConfig({
         main: resolve(__dirname, "src/index.html"),
         recipe: resolve(__dirname, "src/recipe_page/index.html"),
         favorites: resolve(__dirname, "src/favorites/index.html"),
+        search: resolve(__dirname, "src/search/index.html"),
       },
     },
   },
