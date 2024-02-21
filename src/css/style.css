@@ -1,13 +1,10 @@
 :root {
-  --font-body: Open Sans, sans-serif;
-  --font-headline: Playfair Display, serif;
+  --font-body: "Open Sans", sans-serif;
+  --font-headline: "Playfair Display", serif;
   /* Colors */
   --primary-color: #ff9f1c;
   --secondary-color: #2ec4b6;
   --tertiary-color: #cbf3f0;
-  /*--light-grey: #d0d0d0;
-    --dark-grey: #303030;*/
-
   /* Sizes */
   --font-base: 18px;
   --small-font: 0.8em;
@@ -21,12 +18,14 @@ body {
   font-family: var(--font-body);
   font-size: var(--font-base);
 }
+/*   H E A D E R   */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
-  background-color: lightgray;
+  background-color: var(--primary-color);
+  font-family: var(--font-headline);
 }
 .logo {
   display: flex;
@@ -36,10 +35,12 @@ header {
 .logo a {
   color: black;
   text-decoration: none;
-  font-family: var(--font-headline);
   font-weight: bold;
   font-size: var(--large-font);
   margin: 10px;
+}
+.logo a:hover {
+  color: #5d5d5d;
 }
 nav ul {
   display: flex;
@@ -49,8 +50,15 @@ nav ul {
 nav ul li a {
   margin: 1em;
   text-decoration: none;
+  font-family: var(--font-body);
   font-weight: bold;
+  color: black;
 }
+nav ul li a:hover {
+  color: white;
+}
+
+/*   M A I N   */
 main {
   margin: auto 1em;
 }
@@ -78,6 +86,7 @@ main a:hover {
   max-width: 900px;
   margin: auto;
 }
+.r-recipe h1,
 .search-main h2 {
   font-size: var(--large-font);
 }
@@ -97,9 +106,6 @@ main a:hover {
   align-items: center;
   text-align: center;
   border-radius: 20px;
-}
-.r-recipe h1 {
-  font-size: var(--large-font);
 }
 .r-recipe img {
   max-width: 200px;
@@ -145,9 +151,12 @@ button#addToFav:hover {
   border-radius: 8px;
   margin-bottom: 12px;
 }
+
 footer {
-  background-color: lightgrey;
+  background-color: var(--primary-color);
+  font-family: var(--font-base);
   font-size: var(--small-font);
+  font-weight: bold;
   padding: 0.7em;
   text-align: center;
 }

@@ -1,8 +1,4 @@
 /*⭐⭐⭐⭐⭐
-<p class="recipe__tags">${recipe.tags}</p>
-<section class="recipe-details">
-
-<h1><a href="/recipe_pages/index.html?recipe=ID">${recipe.name}</a></h1>
 
 Heart 
 ❤️
