@@ -68,7 +68,8 @@ main a:hover {
 .stars {
   color: #ff9f1c;
 }
-.full-recipe, .search-main {
+.full-recipe,
+.search-main {
   max-width: 940px;
   margin: auto;
   padding: 1em;
@@ -77,7 +78,7 @@ main a:hover {
   max-width: 900px;
   margin: auto;
 }
-.search-main h2{
+.search-main h2 {
   font-size: var(--large-font);
 }
 .random-recipes {
@@ -134,7 +135,7 @@ button#addToFav:hover {
   cursor: pointer;
 }
 #search-bar {
-  background-image: url('/images/search-icon.png');
+  background-image: url("/images/search-icon.png");
   background-position: 10px 10px;
   background-repeat: no-repeat;
   width: 100%;

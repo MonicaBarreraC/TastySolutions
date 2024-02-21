@@ -7,7 +7,10 @@ export default class searchListing {
     async init() {
         this.data = await this.dataSource.getData();
         this.displayListRecipes(this.data);
-        document.getElementById("search-bar").addEventListener("keyup", testFunction);
+        //document.getElementById("search-bar").addEventListener("keyup", testFunction);
+        document.getElementById("search-bar").addEventListener("keyup", function(){
+            testFunction();
+        });
     }
     displayListRecipes(list){
         let htmlList = "";
@@ -21,6 +24,11 @@ export default class searchListing {
     }
 }
 
-function testFunction() {
-    console.log(document.querySelector("#search-bar").value);
+function testFunction(){
+    // Get Value from Search Bar
+    let value = document.querySelector("#search-bar").value;
+    value = value.toLowerCase();
+    console.log(value);
+
+
 }

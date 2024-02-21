@@ -93,7 +93,7 @@ export function listRecipeTemplate(item) {
                 src="/images/placeholder_small.jpg"
                 alt="${item.name}">
             </a>
-            <div>
+            <div class="card-title">
                 <a href="/recipe_page/?recipe=${item.id}">
                     <h2>${item.name}</h2>
                 </a>
