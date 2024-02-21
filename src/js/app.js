@@ -9,8 +9,4 @@ Heart
 🤍
 Empty &#9825
 Full  &#9829
-
-while (listNumbers.includes(number)) {
-                number = Math.floor(Math.random() * maxNumber);
-            }
 */

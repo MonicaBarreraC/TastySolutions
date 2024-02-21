@@ -20,18 +20,13 @@ body {
   margin: 0;
   font-family: var(--font-body);
   font-size: var(--font-base);
-  /*color: var(--dark-grey);*/
-}
-img {
-  max-width: 100%;
 }
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
-  background-color: lightgray; /*. . . . . . */
-  /*background-color: var(--secondary-color);*/
+  background-color: lightgray;
 }
 .logo {
   display: flex;
@@ -73,7 +68,7 @@ main a:hover {
 .stars {
   color: #ff9f1c;
 }
-.full-recipe {
+.full-recipe, .search-main {
   max-width: 940px;
   margin: auto;
   padding: 1em;
@@ -82,7 +77,9 @@ main a:hover {
   max-width: 900px;
   margin: auto;
 }
-
+.search-main h2{
+  font-size: var(--large-font);
+}
 .random-recipes {
   max-width: 1080px;
   margin: auto;
@@ -108,9 +105,13 @@ main a:hover {
 }
 li.fav-card {
   display: flex;
+  align-items: center;
 }
 .fav-card div {
   padding: 1em;
+}
+.fav-card img {
+  width: 100px;
 }
 .img-title {
   display: flex;
@@ -131,6 +132,17 @@ button#addToFav:hover {
   background: none;
   border: none;
   cursor: pointer;
+}
+#search-bar {
+  background-image: url('/images/search-icon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 18px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 footer {
   background-color: lightgrey;

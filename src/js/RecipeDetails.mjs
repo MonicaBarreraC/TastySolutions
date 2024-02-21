@@ -1,42 +1,5 @@
 import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
-function fullRecipeTemplate(recipe) {
-    return `<section class="full-recipe">
-          <div class="img-title">
-              <img
-              src="/images/placeholder.jpg"
-              alt="${recipe.name}"
-              />
-              <div>
-                  <h1>${recipe.name}</h1>
-                  <p>${recipe.source}</p>
-                  <p><span class="stars">&#9733&#9733&#9733&#9733&#9734</span> (4.5)</p>
-                  <button id="addToFav" data-id="${recipe.id}">❤️</button>
-              </div>
-          </div>
-          <h3>Ingredients</h3>
-              <ul class="recipe__ingredients">
-                  ${displayList(recipe.ingredients)}
-              </ul>
-          <h3>Instructions</h3>
-          <p class="recipe__instructions">
-              ${recipe.instructions}
-          </p>
-          </section>`;
-}
-
-function displayList(list) {
-    let html = "";
-    list.forEach((element) => {
-      if(element == "<hr>\r" || element == "<hr>") {
-        html += element;
-      } else {
-        html += `<li>${element}</li>`;
-      }
-    });
-    return html;
-  }
-
 export default class RecipeDetails {
     constructor(recipeId, dataSource) {
         this.recipeId = recipeId;
@@ -67,4 +30,76 @@ export default class RecipeDetails {
         }
         setLocalStorage("fav-recipes", favList);
     }
+}
+
+function fullRecipeTemplate(recipe) {
+    return `<section class="full-recipe">
+          <div class="img-title">
+              <img
+              src="/images/placeholder.jpg"
+              alt="${recipe.name}"
+              />
+              <div>
+                  <h1>${recipe.name}</h1>
+                  <p>${recipe.source}</p>
+                  <p><span class="stars">&#9733&#9733&#9733&#9733&#9734</span> (4.5)</p>
+                  <button id="addToFav" data-id="${recipe.id}" title="Add to Favorites">❤️</button>
+              </div>
+          </div>
+          <h3>Ingredients</h3>
+              <ul class="recipe__ingredients">
+                  ${displayList(recipe.ingredients)}
+              </ul>
+          <h3>Instructions</h3>
+          <p class="recipe__instructions">
+              ${recipe.instructions}
+          </p>
+          </section>`;
+}
+
+function displayList(list) {
+    let html = "";
+    list.forEach((element) => {
+      if(element == "<hr>\r" || element == "<hr>") {
+        html += element;
+      } else {
+        html += `<li>${element}</li>`;
+      }
+    });
+    return html;
+}
+
+export function randomRecipeTemplate(recipe, className, text) {
+    return `
+        <div class="${className}">
+            <img
+                src="/images/placeholder.jpg"
+                alt="${recipe.name}"
+            />
+            <div>
+                ${text}
+                <h1><a href="recipe_page/?recipe=${recipe.id}">${recipe.name}</a></h1>
+                <p><span class="stars">&#9733&#9733&#9733&#9733&#9734</span> (4.5)</p>
+            </div>
+        </div>
+    `;
+}
+
+export function listRecipeTemplate(item) {
+    const newItem = `
+        <li class="fav-card">
+            <a href="/recipe_page/?recipe=${item.id}">
+                <img 
+                src="/images/placeholder_small.jpg"
+                alt="${item.name}">
+            </a>
+            <div>
+                <a href="/recipe_page/?recipe=${item.id}">
+                    <h2>${item.name}</h2>
+                </a>
+            </div>
+            
+        </li>`;
+
+    return newItem;
 }

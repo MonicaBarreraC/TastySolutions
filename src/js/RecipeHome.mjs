@@ -1,20 +1,5 @@
 import { generateListNumbers } from "./utils.mjs";
-
-function randomRecipeTemplate(recipe, className, text) {
-    return `
-        <div class="${className}">
-            <img
-                src="/images/placeholder.jpg"
-                alt="${recipe.name}"
-            />
-            <div>
-                ${text}
-                <h1><a href="recipe_page/?recipe=${recipe.id}">${recipe.name}</a></h1>
-                <p><span class="stars">&#9733&#9733&#9733&#9733&#9734</span> (4.5)</p>
-            </div>
-        </div>
-    `;
-}
+import { randomRecipeTemplate } from "./RecipeDetails.mjs"
 
 export default class RecipeHome {
     constructor(nRecipes, dataSource) {
