@@ -1,13 +1,10 @@
 :root {
-  --font-body: Open Sans, sans-serif;
-  --font-headline: Playfair Display, serif;
+  --font-body: "Open Sans", sans-serif;
+  --font-headline: "Playfair Display", serif;
   /* Colors */
   --primary-color: #ff9f1c;
   --secondary-color: #2ec4b6;
   --tertiary-color: #cbf3f0;
-  /*--light-grey: #d0d0d0;
-    --dark-grey: #303030;*/
-
   /* Sizes */
   --font-base: 18px;
   --small-font: 0.8em;
@@ -20,18 +17,15 @@ body {
   margin: 0;
   font-family: var(--font-body);
   font-size: var(--font-base);
-  /*color: var(--dark-grey);*/
 }
-img {
-  max-width: 100%;
-}
+/*   H E A D E R   */
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
-  background-color: lightgray; /*. . . . . . */
-  /*background-color: var(--secondary-color);*/
+  background-color: var(--primary-color);
+  font-family: var(--font-headline);
 }
 .logo {
   display: flex;
@@ -41,10 +35,12 @@ header {
 .logo a {
   color: black;
   text-decoration: none;
-  font-family: var(--font-headline);
   font-weight: bold;
   font-size: var(--large-font);
   margin: 10px;
+}
+.logo a:hover {
+  color: #5d5d5d;
 }
 nav ul {
   display: flex;
@@ -54,8 +50,15 @@ nav ul {
 nav ul li a {
   margin: 1em;
   text-decoration: none;
+  font-family: var(--font-body);
   font-weight: bold;
+  color: black;
 }
+nav ul li a:hover {
+  color: white;
+}
+
+/*   M A I N   */
 main {
   margin: auto 1em;
 }
@@ -73,7 +76,8 @@ main a:hover {
 .stars {
   color: #ff9f1c;
 }
-.full-recipe {
+.full-recipe,
+.search-main {
   max-width: 940px;
   margin: auto;
   padding: 1em;
@@ -82,7 +86,10 @@ main a:hover {
   max-width: 900px;
   margin: auto;
 }
-
+.r-recipe h1,
+.search-main h2 {
+  font-size: var(--large-font);
+}
 .random-recipes {
   max-width: 1080px;
   margin: auto;
@@ -100,17 +107,18 @@ main a:hover {
   text-align: center;
   border-radius: 20px;
 }
-.r-recipe h1 {
-  font-size: var(--large-font);
-}
 .r-recipe img {
   max-width: 200px;
 }
 li.fav-card {
   display: flex;
+  align-items: center;
 }
 .fav-card div {
   padding: 1em;
+}
+.fav-card img {
+  width: 100px;
 }
 .img-title {
   display: flex;
@@ -132,9 +140,23 @@ button#addToFav:hover {
   border: none;
   cursor: pointer;
 }
+#search-bar {
+  background-image: url("/images/search-icon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 18px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
 footer {
-  background-color: lightgrey;
+  background-color: var(--primary-color);
+  font-family: var(--font-base);
   font-size: var(--small-font);
+  font-weight: bold;
   padding: 0.7em;
   text-align: center;
 }

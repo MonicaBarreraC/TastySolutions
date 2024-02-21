@@ -3,21 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tasty Solutions | Favorites</title>
+    <title>Tasty Solutions | Search</title>
     <link rel="icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/css/style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display&display=swap"
       rel="stylesheet"
     />
-    <script src="/js/favorites.js" type="module"></script>
+    <script src="/js/search.js" type="module"></script>
   </head>
   <body>
     <header id="main-header"></header>
 
     <main>
-      <h1 class="centered">My Favorites</h1>
-      <ul class="fav-list"></ul>
+      <h1 class="centered">Search Recipes</h1>
+      <div class="search-main">
+        <input type="text" id="search-bar" placeholder="Search a recipe" />
+        <ul class="recipes-list"></ul>
+      </div>
     </main>
 
     <footer id="main-footer"></footer>
